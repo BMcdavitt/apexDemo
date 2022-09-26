@@ -1,0 +1,173 @@
+/*****************************************************************************************************************************
+   *       Input Field Styles                                                                                                                    *
+   *****************************************************************************************************************************/
+   
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+   .text-field-filled {
+     height: 60px;
+   }
+
+   .text-field-filled {
+     border-radius: 5px;
+     background-color: #f1f1f1;
+     width: 250px;
+     position: relative;
+     transition: 150ms ease;
+     margin-right: 10px;
+     margin-top: 10px
+   }
+   .text-field-filled::before {
+     content: "";
+     display: block;
+     background-color: #005293;
+     position: absolute;
+     height: 2px;
+     width: 0%;
+     left: 50%;
+     bottom: 0;
+     transition: 150ms ease;
+     opacity: 0;
+   }
+   .text-field-filled:focus-within::before {
+     content: "";
+     display: block;
+     background-color: #2196F3;
+     position: absolute;
+     height: 2px;
+     width: 100%;
+     left: 0;
+     bottom: 0;
+     opacity: 1;
+   }
+   .text-field-filled:hover,
+   .text-field-filled > input:focus {
+     background-color: #0000001a;
+   }
+   .text-field-filled > input {
+     outline: none;
+     border-radius: 5px;
+     padding: 30px 10px 10px 15px;
+     background: none;
+     position: relative;
+     border: none;
+     width: 100%;
+   }
+   .text-field-filled > span {
+     color: #000000ad;
+     font-size: 1rem;
+     transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+     position: absolute;
+     left: 15px;
+     top: 0;
+     bottom: 0;
+     margin: auto;
+     height: 5px;
+     line-height: 1px;
+     pointer-events: none;
+
+   }
+   .text-field-filled > input:focus ~ span,
+   .text-field-filled > input:valid ~ span {
+     color: #2196F3;
+     font-size: 12px;
+     transform: translateY(-12px);
+   }
+   
+
+
+/*****************************************************************************************************************************
+   *       Check Box Styles                                                                                                                    *
+   *****************************************************************************************************************************/
+
+.dataFields {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+/* Hide the browser's default checkbox */
+.dataFields input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #f1f1f1;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .dataFields:hover input ~ .checkmark {
+    background-color: #0000001a;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .dataFields input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .dataFields input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .dataFields .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+  /*****************************************************************************************************************************
+   *                                                                                                                           *
+   *****************************************************************************************************************************/
+
+  .form {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .center {
+    display: flex;
+    justify-content: space-evenly
+  } 
+
+  .button {
+    border-radius: 5px;
+  }
+
+  
